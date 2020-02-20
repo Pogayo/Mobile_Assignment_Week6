@@ -14,6 +14,7 @@
         android:ems="10"
         android:hint="@string/s_id_card_hint"
         android:importantForAutofill="no"
+        android:drawableStart="@drawable/ic_credit_card_black_24dp"
         android:inputType="textPersonName"
         android:padding="10dp" />
 
@@ -24,19 +25,12 @@
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="@string/s_name_hint"
+        android:drawableStart="@drawable/ic_person_black_24dp"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:padding="10dp" />
 
-    <EditText
-        android:id="@+id/s_pswd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
-        android:hint="@string/s_pswd_hint"
-        android:inputType="textPassword"
-        android:padding="10dp" />
+
 
     <EditText
         android:id="@+id/s_email"
@@ -45,7 +39,19 @@
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="@string/s_email_hint"
+        android:drawableStart="@drawable/ic_mail_black_24dp"
         android:inputType="textEmailAddress"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/s_pswd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:drawableStart="@drawable/ic_security_black_24dp"
+        android:hint="@string/s_pswd_hint"
+        android:inputType="textPassword"
         android:padding="10dp" />
 
     <RadioGroup

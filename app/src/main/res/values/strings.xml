@@ -3,7 +3,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="entry_fragment_name">Entry </string>
-    <string name="s_id_card_hint">Tap Student ID </string>
+    <string name="s_id_card_hint">Student ID no </string>
     <string name="s_name_hint">Student Name </string>
     <string name="s_pswd_hint">Password </string>
     <string name="s_email_hint">Email </string>
@@ -22,7 +22,6 @@
         <item>India</item>
     </string-array>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_message">Message</string>
     <string name="action_settings">Settings</string>
