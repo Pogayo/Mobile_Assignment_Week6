@@ -1,6 +1,7 @@
 package com.pogayo.studentrecords;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,15 +9,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+
 
 import androidx.fragment.app.Fragment;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class EntryFragment extends Fragment {
 
     AddClicked mCallback;
     Button mButton;
     EditText sIdEdit; EditText sNameEdit; EditText sPswdEdit; EditText sEmailEdit;
+    Context context;
 
     public interface AddClicked{
          void sendText(String text);
@@ -39,6 +43,7 @@ public class EntryFragment extends Fragment {
                 addRecord();
             }
         });
+       context = getActivity();
         return view;
 
 
@@ -81,5 +86,38 @@ public class EntryFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mCallback = null;
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+
+        SharedPreferences sh
+                = context.getSharedPreferences("MySharedPref",
+                MODE_PRIVATE);
+
+        String name = sh.getString("name", "");
+     String pswd=sh.getString("password","");
+
+        sNameEdit.setText(name);
+        sPswdEdit.setText(pswd);
+    }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+
+        SharedPreferences sharedPreferences
+                = context.getSharedPreferences("MySharedPref",
+                MODE_PRIVATE);
+        SharedPreferences.Editor myEdit
+                = sharedPreferences.edit();
+        myEdit.putString("name",
+                sNameEdit.getText().toString());
+        myEdit.putString("password",
+                sPswdEdit.getText().toString());
+        myEdit.commit();
     }
 }
